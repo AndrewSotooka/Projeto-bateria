@@ -8,11 +8,14 @@ for(let i = 0; i < numberOfDrumButtons; i++) {
 
         makeSounds(buttonInnerHTML)
 
+        buttonAnimation(buttonInnerHTML)
     })
 }
 
 document.addEventListener('keydown', function(event) {
     makeSounds(event.key)
+
+    buttonAnimation(event.key)
 })
 
 function makeSounds(key) {
@@ -48,4 +51,8 @@ tom7.play()
         default: console.log(buttonInnerHTML);
             break;
     }
+}
+
+function buttonAnimation(currentKey) {
+    let activeButton = querySelector('.' + currentKey)
 }
